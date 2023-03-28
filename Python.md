@@ -333,3 +333,125 @@ for persona in llista_notes:
 ```
 
 
+### Ejercicio 2
+
+importar dataframe
+```python
+import pandas as pd
+
+df= pd.read_csv("dataset_youtube.csv", sep=",", na_filter=False)
+
+```
+
+comptar columnes y files y llegir columnes
+
+```python
+total_rows=len(df.axes[0])  
+total_cols=len(df.axes[1])  
+  
+print(f"(Number of Rows: {total_rows}")  
+print(f"(Number of Columns: {total_cols}")
+print(df.axes[1])
+```
+
+eliminar columnes
+```python
+lista_pop = ['defaultLanguage', 'dislikeCount','position','channelId','publishedAt', 'videoDescription', 'tags', 'videoCategoryId', 'videoCategoryLabel','duration','durationSec','dimension','definition', 'caption', 'defaultLAudioLanguage','thumbnail_maxres','licensedContent','favoriteCount']  
+
+for n in lista_pop:  
+    df.pop(n)
+```
+
+contar videos
+
+```python
+
+# comprobo quants canals unics hi ha 
+canals = df['channelTitle']
+
+canals_unics = df.channelTitle.unique
+
+#separo el df segons el canal
+df_1 = df.loc[df['channelTitle'] == NPR Music]
+df_2 = df.loc[df['channelTitle'] == KEXP]
+
+print(df_1.shape[0])
+print(df_2.shape[0])
+```
+
+Calcular mitjana views, comentaris i likes
+
+```python
+print(round(df_1['viewCount'].mean(),2))     #viewers NPR
+print(round(df_2['viewCount'].mean(),2))     #viewers KEXP
+print(round(df_1['commentCount'].mean(),2))  #comments NPR
+print(round(df_2['commentCount'].mean(),2))  #comments KEXP
+print(round(df_1['likeCount'].mean(),2))     #likes NPR
+print(round(df_2['likeCount'].mean(),2))     #likes KEXP
+```
+
+desviació
+
+```python
+prom_expectadors_1 = round(df_1['viewCount'].mean())
+prom_expectadors_2 = round(df_2['viewCount'].mean())
+
+for index,row in df_1.iterrows():
+	df_1['desviacioV'] = prom_exèctadors_1 - row['viewCount']	
+```
+
+### Quick Start 
+
+``` python
+import spotipy  
+from spotipy.oauth2 import SpotifyClientCredentials  
+  
+SPOTIPY_CLIENT_ID='cliente'  
+SPOTIPY_CLIENT_SECRET='secreto'  
+  
+auth_manager = SpotifyClientCredentials(SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET)  
+sp = spotipy.Spotify(auth_manager=auth_manager)
+```
+
+``` python
+import spotipy  
+from spotipy.oauth2 import SpotifyClientCredentials  
+import json  
+import time  
+import pandas as pd  
+  
+SPOTIPY_CLIENT_ID='client'  
+SPOTIPY_CLIENT_SECRET='secreto'  
+  
+auth_manager = SpotifyClientCredentials(SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET)  
+sp = spotipy.Spotify(auth_manager=auth_manager)  
+  
+playlist = '417lrWJuZdotydKFOQJqrc'  
+  
+# https://spotipy.readthedocs.io/en/2.22.1/#spotipy.client.Spotify.playlist_items  
+query = sp.playlist_items(playlist, fields=None, limit=100, offset=0, market=None)  
+  
+relacions = []  
+  
+for i in query['items']:  
+    artists = i['track']['artists']  
+    for artist in artists:  
+        source_artist_name = artist['name']  
+        source_artist_id = artist['id']  
+        #print(source_artist_name, source_artist_id)  
+        related_artist = sp.artist_related_artists(source_artist_id)  
+        time.sleep(1)  
+        relacionats = related_artist["artists"]  
+        for l in relacionats:  
+            related_artist_name = l["name"]  
+            tupla = (source_artist_name, related_artist_name)  
+            relacions.append(tupla)  
+  
+df = pd.DataFrame.from_records(relacions, columns = ['source','target'])  
+df.to_csv("dataset.csv", index=False)  
+  
+'''  
+with open(f'{artist_id}data.json', 'w', encoding='UTF-8') as f:  
+    json.dump(related_artist, f, ensure_ascii=False, indent=4)
+'''
+```
