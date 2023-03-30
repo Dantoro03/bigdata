@@ -36,7 +36,7 @@ for n in numeros:
 		print (f"{n} es major que 6")	
 ```
 
-### Tuple
+## Tuple
 
 ``` python
 
