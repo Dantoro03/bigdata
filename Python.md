@@ -6,19 +6,22 @@
 llista_1= ["Adria", "Carles", "Julia"]
 llista_2= ["Joan", "Maria", "Roger"]
 
+#afegeixo la llista_2 a la llista_1
+llista_1.append(llista_2)
+
 ```
 
 ## Condicionants
 ### cadenes 
 
 ```python
-llista_noms =  ["Carme, Jaume"]
+llista_noms =  ["Carme, Jaume, Joan"]
 
-for nom in llista_noms:
-	if nom == "Joan":
-		print (f"{nom}si que és en joan")
-	else:
-		print (f"{nom}no és en joan")
+for nom in llista_noms: #itero dins la llista de noms
+	if nom == "Joan":  #si el nom coincideix amb 'Joan' dona el següent resultat
+		print (f"{nom}si que és en Joan")
+	else: #si no coincideix dona el següent resultat
+		print (f"{nom}no és en Joan")
 ```
 
 ### Integer
@@ -27,12 +30,12 @@ for nom in llista_noms:
 
 llista = [1,2,3,4,5,6,7,8,9,10]
 
-for n in numeros:
-	if n < 6:
+for n in numeros: #recorro la llista de numeros
+	if n < 6: #si un numero es menor que 6 dona el següent resultat
 		print (f"{n} es menor que 6")
-	elif n == 6:
+	elif n == 6: #si no es menor pero es igual dona el següent resultat
 		print (f"{n} es igual que 6")
-	elif n > 6:
+	elif n > 6: #si no es menor, ni igual però es major dona el següent resultat
 		print (f"{n} es major que 6")	
 ```
 
@@ -42,10 +45,10 @@ for n in numeros:
 
 llista_1 = [6,9]
 llista_2 = ["josep", "cristina"]
-llista_final = []
-for nota, nom in zip(llista_1, llista_2)
-	conjunt = (nota, nom)
-	llista_final.append(conjunt)
+llista_final = [] #llista buida per afegir la tupla
+for nota, nom in zip(llista_1, llista_2) #recorro les dues llistes
+	conjunt = (nota, nom) #creo una tupla amb les dades de les dues llistes
+	llista_final.append(conjunt) #afegeixo la tupla a la llista final
 print (llista_final)
 
 for t in llista_final:
@@ -56,19 +59,20 @@ print(nota,nom)
 
 ## Funcions integrades
 
-### len
+### len() contar mida
 
 ```python
 
 numeros = [1,2,3,4]
 
-x = len(numeros)
+x = len(numeros) 
 
 print(len(numeros))
 print (x)
 ```
 
-Index
+
+### .index()  trobar posició en una llista
 ```python 
 alumnes = ["Sandra", "Roger", "Emma", "Carlos", "Albert", "Adrià", "Joan"]
 
@@ -82,14 +86,14 @@ else:
 
 
 ```
-### convertir cadena en int
+### int() convertir cadena en int
 
 ``` python
 var = "5"
 varnum = int(var)
 ```
 
-Set
+### set() crea una llista sense repeticions
 
 ```python 
 alumnes = ["adrià", "carla", "joan", "pere", "pere", "carla"]
@@ -188,20 +192,20 @@ print(f"{nota_min} de {alumnes[posicio_min]}")
 ```python
 import pandas as pd #principio del doc
 #al final del doc
-df = pd.DataFrame({
-	"col1" : a
+df = pd.DataFrame({   #creo el dataframe
+	"col1" : a #dono un nom a la columna i una variable de llista que l'ompli
 	"col2" : b
 	"col3" : c	   
 	}) 
 # amb tupla
-df = pd.DataFrame(tupla, llista_columnes)
+df = pd.DataFrame(tupla, llista_columnes) 
 
-df.to_csv("dataset.csv")
-df.to_xlsx("dataset.xlsx", index=false)
+df.to_csv("dataset.csv") #exportart a un csv
+df.to_xlsx("dataset.xlsx", index=false) #exportar a un xlsx sense index
 ```
-Exportar mostra
+### .sample Exportar mostra
 ```python
-sample = df.sample(frac=0.1)  
+sample = df.sample(frac=0.1)  #exporta una mostra del 10%
 sample.to_csv("sample.csv")
 ```
 Pandas read the docs
@@ -211,15 +215,15 @@ Pandas read the docs
 ```python
 import pandas as pd
 
-df = pd.read_csv("exemple.csv", sep=",", na_filter=false)
+df = pd.read_csv("exemple.csv", sep=",", na_filter=false) 
 ```
 
 ## Extraer valor máximo
 
 ```python
 df = pd.DataFrame(llista_dades, columns=["temp","pres", "data"])  
-max = df['temp'].idxmax()  
-print(df.iloc[[max]]) #localizar indice valor
+max = df['temp'].idxmax()  #busco la id més alta dins de la columna 'temp'
+print(df.iloc[[max]]) #localitzo l'index de la variable max i el printo
 ```
 ### Leer file.json
 
