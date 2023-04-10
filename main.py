@@ -25,7 +25,7 @@ for chunk in df:
 final_frame_1 = pd.concat(list) #concateno la llista de chunks
 final_frame_2 = final_frame_1.groupby("captured_at")['viewer_count'].sum() #torno a agrupar y sumar per si algun chunk a tallat les dades
 final_frame_2.to_csv("viewers_date.csv") #exporto el csv
-
+'''
 #Ejercicio 2
 
 #Creo dos dataframes un per el total de captures y altre per el total de views
@@ -60,7 +60,7 @@ streams.rename(columns = {'streamer_name':'captures', 'index':'streamer_name'}, 
 df5 = pd.merge(streams, viewers)
 
 df5.to_csv('Ejercicio_4.csv', index=True)
-'''
+
 
 #Ejercicio 5
 
