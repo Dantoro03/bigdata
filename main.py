@@ -69,4 +69,4 @@ df6 = df.groupby("captured_at")['viewer_count'].std().round(4).reset_index()
 #Canvio el nom de la columna de viewer_count per desviacio
 df6.rename(columns = {'viewer_count':'desviacio'}, inplace = True)
 
-df6.to_csv('Ejercicio_5.csv', index=True)
+df6.to_csv('Ejercicio_5.csv', decimal=',' ,index=True)
