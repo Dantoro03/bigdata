@@ -39,4 +39,5 @@ La desviación estandar es el valor que mide lo polarizada que están las audien
 Podemos observar que la desviación estandar varía de forma ciclica, habiendo muy poca por las mañanas y empezando a subir sobre las 18 de la tarde hasta encontrar su pico entre las 20 y las 22 para ir bajando durante el transcurso de la noche y repetir el ciclo.
 
 
-![[Ejercicio5.png]]
+![[Ejercicio5.png]](https://github.com/Dantoro03/bigdata/blob/main/ejercicio%2016-04/Ejercicio5.png)
+
