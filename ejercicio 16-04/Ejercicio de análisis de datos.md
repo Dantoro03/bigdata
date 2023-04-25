@@ -10,13 +10,14 @@ Los espectadores van variando cada dia por ciclos siendo los picos de audiencia 
 Las categorias más vistas son Just Chatting, Sports y Minecraft, sin embargo, solo Just Chatting esta entre las tres categorias más streameadas junto con VALORANT y Fornite.
 Cabe remarcar que las categorias Apex Legends, Call of Duty Modern Warfare II y Call of Duty Warzone estan entre las 10 categorias más streameadas pero no entre las más vistas, al reves de Grand Theft Auto V, Special Events y FIFA 23 que estan entre las más vistas y no entre las más streameadas.
 
-![[Ejercicio2.png]]
+![[Ejercicio2.png]](https://github.com/Dantoro03/bigdata/blob/main/ejercicio%2016-04/Ejercicio2.png)
+
 
 ##### 3.  ¿Como han evolucionado (captura a captura) estas categorias a lo largo del mes?
 
 La categoria de Just Chatting ha tenido una flujo constante de espectadores y un pico de casi 600k el 28 de febrero. La categoria de Sports aparece cada sabado y domingo y es la que consigue más viewers simultaneos con 1.376.073 el dia 26 de febrero. Minecraft y Special Events aparecen con picos de espectadores dias concretos pero no siguen ningún patrón claro.
 
-![[Ejercicio3.png]]
+![[Ejercicio3.png]](https://github.com/Dantoro03/bigdata/blob/main/ejercicio%2016-04/Ejercicio3.png)
 
 ##### 4.  ¿Cuál es la distribución de los streamers si los clasificamos por volumenes de audiencia y horas realizadas?
 
@@ -28,7 +29,7 @@ Entre los 100.000 y 1.000.000 vemos muchos menos streamers y la mayoria los enco
 
 Podemos ver que la mayoria de streamers se encuentran entre los 1.000 y 100.000 viewers y por debajo de las 200 horas streameadas. Tambien observamos que a partir de los 4.000 viewers, aumentar más horas deja de darte más viewers.
 
-![[Ejercicio4 1.png]]
+![[Ejercicio4 1.png]](https://github.com/Dantoro03/bigdata/blob/main/ejercicio%2016-04/Ejercicio4.png)
 
 
 ##### 5.  ¿Cuál ha sido la evolución (captura a captura) de la desviación estándar en el volúmen de espectadores? ¿En qué momentos las audiencias se encuentran más polarizadas y en qué momentos la distribución es más uniforme?
