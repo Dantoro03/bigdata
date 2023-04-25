@@ -3,7 +3,7 @@
 
 Los espectadores van variando cada dia por ciclos siendo los picos de audiencia máximos de cada dia entre las 20:00 y las 23:00. La evolución general se ha mantenido estable durante todo el mes, pero en los ultimos tres dias hemos tenido los tres picos más altos del mes.
 
-![[Ejercicio1.png]]
+![Ejercicio1.png](https://github.com/Dantoro03/bigdata/blob/main/ejercicio%2016-04/Ejercicio1.png)
 
 ##### 2.  ¿Cuales son las categorías más vistas y en las que más horas de directo se han realizado?
 
