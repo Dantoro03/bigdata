@@ -102,4 +102,4 @@ for file in files:
             }, index=[0])
             llista_dfs.append(df) #fico el dataframe en una llista fora del bucle per guardar les dades
 df_final = pd.concat(llista_dfs) #concateno tots els dataframes de la llista
-df_final.to_csv('df_final.csv', index= False)
+df_final.to_csv('df_final.csv', sep =',' , index= False)
