@@ -13,6 +13,7 @@ for file in tqdm(files):
         tweets = dades['data']
         vacia = None #creo una variable per crear una columna buida
         for tweet in tweets: #entro a la informació de cada tweet
+            time = tweet['created_at']
             author_id = tweet['author_id']
             users = dades['includes']['users']
             likes = tweet['public_metrics']['like_count']
@@ -41,54 +42,55 @@ for file in tqdm(files):
             text = tweet['text']
             text_l = text.lower() #paso el text a minuscules per a que no hi hagi case sensitive
             if text_l.find('ada') >= 0:
-                Ada = True
+                Ada = 1
             elif text_l.find('colau') >= 0:
-                Ada = True
+                Ada = 1
             else:
-                Ada = False
+                Ada = 0
             if text_l.find('basha') >= 0:
-                Basha = True
+                Basha = 1
             elif text_l.find('changue') >= 0:
-                Basha = True
+                Basha = 1
             else:
-                Basha = False
+                Basha = 0
             if text_l.find('ernest') >= 0:
-                Ernest = True
+                Ernest = 1
             elif text_l.find('maragall') >= 0:
-                Ernest = True
+                Ernest = 1
             else:
-                Ernest = False
+                Ernest = 0
             if text_l.find('jaume') >= 0:
-                Jaume = True
+                Jaume = 1
             elif text_l.find('collboni') >= 0:
-                Jaume = True
+                Jaume = 1
             else:
-                Jaume = False
+                Jaume = 0
             if text_l.find('xavier') >= 0:
-                Xavier = True
+                Xavier = 1
             elif text_l.find('trias') >= 0:
-                Xavier = True
+                Xavier = 1
             else:
-                Xavier = False
+                Xavier = 0
             if text_l.find('anna') >= 0:
-                Anna = True
+                Anna = 1
             elif text_l.find('grau') >= 0:
-                Anna = True
+                Anna = 1
             else:
-                Anna = False
+                Anna = 0
             if text_l.find('eva') >= 0:
-                Eva = True
+                Eva = 1
             elif text_l.find('parera') >= 0:
-                Eva = True
+                Eva = 1
             else:
-                Eva = False
+                Eva = 0
             if text_l.find('daniel') >= 0:
-                Daniel = True
+                Daniel = 1
             elif text_l.find('sirera') >= 0:
-                Daniel = True
+                Daniel = 1
             else:
-                Daniel = False
+                Daniel = 0
             df = pd.DataFrame({ #creo el dataframe
+                'created_at': time,
                 'user_id': author_id,
                 'user_name': user_name,
                 'followers_count': followers,
