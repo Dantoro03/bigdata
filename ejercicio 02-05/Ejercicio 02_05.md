@@ -10,7 +10,7 @@ En aquest grafic podem veure que hi ha una gran diferencia entre Ada Colau i els
 
 ## Hastags
 
-![[Hashtags 1.png]]
+![Hashtags 1.png]ejercicio 02-05/Hashtags 1.png
 
 Si analitzem els hashtags més utilitzats podem veure que els temes dels que més es parla (els hashtags més utilitzats) son de noticies o entrevistes (URGENTE, OPINIÓN, ENTREVISTA, ÚLTIMAHORA), un esperable hashtag de Barcelona, tres hashtags relacionats amb algun polític o partit i un últim de Pólonia. Però aquest temes encara ser els més parlats no son els que generen més impacte, ja que exceptuant URGENTE i TriasAlcalde la resta de hashtags no estan entre els deus hashtag  amb més impacte. 
 Els Hashtags que si que generen més impacte son els que parlen de la llei de vivenda (leyantiocupasYAA, leyantiocupas, ViviendaARV) o hashtags utilitzats relacionats directament amb partits politics (SoloSumaPSOE, TriasAlcalde, LaBarcelonaSensata, Elecciones2023, YolandaPresidenta)
