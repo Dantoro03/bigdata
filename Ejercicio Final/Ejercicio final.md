@@ -49,6 +49,6 @@ for resposta in data:
         tup = ({"id":t_id, "name":name, "artists_name":art_name})  
         llista_cancons.append(tup)  
   
-with open('fuegodata.json', 'w', encoding='UTF-8') as f:  
+with open('llistadata.json', 'w', encoding='UTF-8') as f:  
     json.dump(llista_cancons, f, ensure_ascii=False, indent=4)
 ```
