@@ -41,26 +41,35 @@ for p in playlists:  #Creamos un bucle que recorra la lista de playlist
 ### Extraer nombre, artista, popularity y id de cada canción
 
 ```python 
-files = glob.glob("api-res/playlist-*.json")  #abrimos todos los json que hemos creado
-llista_cancons = [] #Creamos una lista donde recoger todos los datos de las canciones
+files = glob.glob("api-res/playlist-*.json")
+llista_cancons = []
 
-for file in files: #Creamos una función que recorra todos los archivos json
-	playlist_id = file.split("-")[2] #sacamos el id de la playlist del nombre del archivo
-	print(playlist_id)
-	f = open(file, encoding="utf8") #Abrimos el json
-	data = json.load(f) #Cargamos el json
-	tracks = data["items"] 
-	for track in tracks: #Recorremos cada canción dentro del json y sacamos las variables que necesitamos
-		playlist = playlist_id 
-		name = track['track']['name']
-		art_name = track['track']['artists'][0]["name"]
-		t_id = track['track']['id']
-		popularity = track['track']['popularity']
-		tup = ({"playlist_id":playlist, "id":t_id, "name":name, "artists_name":art_name, "popularity":popularity}) #Creamos una tupla con un diccionario con los datos que queremos extraer
-		llista_cancons.append(tup) #Guardamos la tupla en la lista de canciones
+for file in files:
+    playlist_id = file.split("-")[2]
 
-with open(f'data.json', 'w', encoding='UTF-8') as f: #Guardamos todos los datos en un json
-	json.dump(llista_cancons, f, ensure_ascii=False, indent=4)
+    f = open(file, encoding="utf8")
+    data = json.load(f)
+    tracks = data["items"]
+    for track in tracks:
+
+        playlist = playlist_id
+        name = track['track']['name']
+        art_name = track['track']['artists'][0]["name"]
+        art_id = track['track']['artists'][0]["id"]
+        artist_info = sp.artist(art_id)
+        t_id = track['track']['id']
+        popularity = track['track']['popularity']
+        artist_genres = artist_info["genres"]
+        try:
+            for genre in artist_genres:
+                genre_principal = artist_genres[0]
+        except IndexError:
+            genre_principal = "no data"
+        tup = ({"playlist_id":playlist, "id":t_id, "name":name, "artists_name":art_name, "popularity":popularity, "artist_id":art_id, 'genere':genre_principal})
+        llista_cancons.append(tup)
+
+with open(f'data.json', 'w', encoding='UTF-8') as f:
+    json.dump(llista_cancons, f, ensure_ascii=False, indent=4)
 ```
 
 ## Extraer Features y crear DF
